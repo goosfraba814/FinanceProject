@@ -1,0 +1,27 @@
+
+.goal {
+    width: 33.3333333333333333333%;
+    background-color: aquamarine;
+    border-style: solid;
+}
+
+.goal-item-wrapper {
+    padding: 0;
+    margin: 0;
+    border-style: solid;
+    display: flex;
+    flex-direction: column;
+}
+
+.goal-item-wrapper h3{
+
+}
+
+.goal-item {
+    justify-content: space-evenly;
+}
+
+.goal-item p{
+    display: inline;
+}
+
