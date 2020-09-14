@@ -19,14 +19,14 @@ class Goal extends React.Component {
 
   addIncome(e){
       this.setState(prevState => ({
-          income:  [...prevState.income, "ha2" ]
+          income:  [...prevState.income, "ha2" ],
           
        })); // wrapper function (work)
   }
 
   addExpense(){
       this.setState(prevState => ({
-          expense:  [...prevState.expense, "ha2" ]
+          expense:  [...prevState.expense, "ha2" ],
           
        })); 
   }
