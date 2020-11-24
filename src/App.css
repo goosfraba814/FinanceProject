@@ -3,6 +3,29 @@
   height: 100vh;
 
   display: flex;
+  flex-direction: column;
 
 }
+
+.Selection {
+  display: flex;
+  height: 5vh;
+  
+  justify-content: space-around;
+
+  background-color: violet;
+}
+
+.Selection h2{
+  margin: auto;
+  border-style: solid;
+}
+
+.App-parts {
+  display: flex;
+  height: 95vh;
+  width: 100%;
+
+}
+
 

@@ -15,11 +15,12 @@ class Mortgage extends React.Component<> {
       data: 0,
       homeValue: 350000,
       dpPER: 20,
-      downpayment: (350000/ 20),
-      loanAmount: 300000,
+      downAmount: (350000 / 20),
+      loanAmount: 350000 - (350000 / 20),
       interestRate: 3.5,
       loanTerm: 30,
 
+      monthlyPayment: 0,
     };    
 
     this.handleChange = this.handleChange.bind(this);
@@ -49,28 +50,28 @@ class Mortgage extends React.Component<> {
             </div> 
 
             <div className="mortgage-calculator-section">
-              <h2>Down Payment ($ or %)</h2>
-              <TextField size="small" label="Description" defaultValue="60000" />
+              <h2>Down Payment ($)</h2>
+              <TextField size="small" label="Description" defaultValue="60000" value={this.state.dpAmount} />
             </div> 
 
             <div className="mortgage-calculator-section">
-              <h2>Loan Amount</h2>
-              <TextField size="small" label="Description" />
+              <h2>Down Payment (%)</h2>
+              <TextField size="small" label="Description" defaultValue="20" value={this.state.dpPER} />
             </div> 
 
             <div className="mortgage-calculator-section">
               <h2>Interest Rate</h2>
-              <TextField size="small" label="Description" />
+              <TextField size="small" label="Description" defaultValue="3.5" value={this.state.interestRate} />
             </div> 
 
             <div className="mortgage-calculator-section">
               <h2>Loan Term</h2>
-              <TextField size="small" label="Description" defaultValue="30"/>
+              <TextField size="small" label="Description" defaultValue="30" value={this.state.loanTerm} />
             </div> 
 
             <div className="mortgage-calculator-section">
               <h4> => Monthly Payment: $</h4> 
-              <TextField size="small" label="Description" />
+              <TextField size="small" label="Description" value={this.state.monthlyPayment} />
             </div> 
           </div>
 

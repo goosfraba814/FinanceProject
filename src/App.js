@@ -100,14 +100,36 @@ function App() {
 
   const userID = 3;
 
-  
+  // for switching to budget and morgage
+  const [display, setDisplay] = useState("Budget");
+
+  // get testData to show (Future: Update from data from Firebase)
   const test = prepareTest();
 
   return (
-    <div className="App">    
-      <Goal userID={userID} data={test}/>
-      <Mortgage/>
-      <Analysis/>
+    <div className="App">
+
+      <div className="Selection" >
+        <button>Menu</button>
+        <button style={{width: "600px"}} onClick={() => setDisplay("Budget")}>Budget</button>
+        <button style={{width: "600px"}} onClick={() => setDisplay("Mortgage")}>Mortgage</button>
+      </div>
+
+      <div className="App-parts">
+
+        { (display === "Budget") ? 
+          <div style={{ display: "flex", width: "100%"}}>
+            <Goal userID={userID} data={test} />      
+            <Analysis value={0} data={test} />
+          </div>
+          :
+          <div style={{ display: "flex", width: "100%"}}>
+            <Mortgage userID={userID} data={test} />      
+            <Analysis value={0} data={test} />
+          </div>
+        }
+
+      </div>
     </div>
   );
 }

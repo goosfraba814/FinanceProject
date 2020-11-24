@@ -144,8 +144,6 @@ class Goal extends React.Component<> {
 
     const inputData = e.target.value;   
 
-    var temp = 0;
-
     if(e.target.id == "Category"){
       currentData[index].category = inputData;
       this.setState({data: currentData });
@@ -164,7 +162,6 @@ class Goal extends React.Component<> {
       }
 
     }
-
 
     this.setState({data: currentData, });
 
@@ -246,7 +243,7 @@ class Goal extends React.Component<> {
 
           {/********************************************************************************************/}
 
-          <div className="goal-item-wrapper" style={{height: "60vh"}}>
+          <div className="goal-item-wrapper" style={{height: "55vh"}}>
             <h3 style={{height: "5%", margin: "0 auto"}}>Expense</h3>
             
             <div style={{height: "90%", margin: 0, backgroundColor: "yellow", display: "flex", flexDirection: "column",     }}>
