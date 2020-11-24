@@ -1,6 +1,8 @@
 
 .goal {
     width: 33.3333333333333333333%;
+    height: 100%;
+
     background-color: aquamarine;
     border-style: solid;
 }
@@ -9,19 +11,61 @@
     padding: 0;
     margin: 0;
     border-style: solid;
+    border-color: blue;
+
+
     display: flex;
     flex-direction: column;
+
+    
 }
 
-.goal-item-wrapper h3{
+.goal-item-wrapper button{
+    width: fit-content;
+}
+
+.goal-items {
+    display: flex;
+    flex-direction: column;
+
+    border-style: solid;
+    border-color: white;
+    background-color: chocolate;
+   
+    overflow: auto;
+
+
+    margin: 0;
+    padding: 0;
+    
+}
+
+.goal-item-header {
+    display: flex;
+    flex-direction: row;
+    width: 85%;
+    border-style: solid;
+    background-color: pink;
+    margin: 0 auto;
 
 }
 
 .goal-item {
+    display: flex;
+    flex-direction: row;
     justify-content: space-evenly;
+     
+    border-style: solid;  
+    height: auto;
+
 }
 
-.goal-item p{
-    margin: 0;
+.aaa {
+    color: "white";
+    background-color: "white";
 }
 
+.goal-total {
+    text-align: center;
+    background-color: greenyellow;
+}
