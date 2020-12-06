@@ -117,17 +117,15 @@ function App() {
 
       <div className="App-parts">
 
-        { (display === "Budget") ? 
-          <div style={{ display: "flex", width: "100%"}}>
-            <Goal userID={userID} data={test} />      
-            <Analysis value={0} data={test} />
-          </div>
+        {/*  */}
+        {(display === "Budget") ? 
+          <Goal style={{ display: "flex", width: "50%"}} userID={userID} data={test} />      
           :
-          <div style={{ display: "flex", width: "100%"}}>
-            <Mortgage userID={userID} data={test} />      
-            <Analysis value={0} data={test} />
-          </div>
+          <Mortgage style={{ display: "flex", width: "50%"}} userID={userID} data={test} />      
         }
+
+        {/*  */}
+        <Analysis style={{ width: "50%"}} value={display} data={test} display={display} />
 
       </div>
     </div>

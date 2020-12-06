@@ -7,7 +7,7 @@ function Analysis(props) {
 
   return (
     <div className="Analysis">
-        <h1>prop.value: {props.value} </h1>
+        <h1>prop.value: {props.value} --- {props.display} </h1>
         <div>
             <p>Toggle weekly, monthly, yearly stats </p>
             <p>a Graph of spending + Chart Graph </p>
