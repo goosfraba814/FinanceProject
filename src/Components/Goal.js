@@ -37,12 +37,12 @@ class Goal extends React.Component<> {
     this.handleDelete = this.handleDelete.bind(this);
   }  
 
-
-
   componentDidMount(prevProps){
-    // fill up 'Data' state from Firebase
-    // Then fill up Incomes and Expenses state using that
-    // split data for incomes and expenses
+    //alert("componentDidMount...");
+  }
+
+  componentWillUnmount(){
+    alert("ComponentDidUnmount...");
   }
 
   getTotalIncome(obj){

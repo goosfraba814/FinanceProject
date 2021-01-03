@@ -36,8 +36,16 @@ class Mortgage extends React.Component<> {
     const y = (Math.pow(1 + rate, months) - 1); 
     const mthlyAmount =  (principal * x / y).toFixed(2);
     
+    //alert("componentDidMount...");
+
     this.setState({monthlyPayment: mthlyAmount});
   }
+
+  componentWillUnmount(){
+    alert("ComponentDidUnmount...");
+  }
+
+
 
   handleChange(e){
     // TODO: updating value without using if/switch
@@ -53,42 +61,42 @@ class Mortgage extends React.Component<> {
 
             <div className="mortgage-calculator-section">
               <h2>Home Price/Value</h2>
-              <TextField size="small" label="Home Price" value={this.state.homeValue} onChange={this.state.handleChange}/>
+              <TextField size="small" value={this.state.homeValue} onChange={this.state.handleChange}/>
             </div> 
 
             <div className="mortgage-calculator-section">
               <h2>Down Payment ($)</h2>
-              <TextField size="small" label="Description" value={this.state.dpAmount} />
+              <TextField size="small" value={this.state.dpAmount} />
             </div> 
 
             <div className="mortgage-calculator-section">
               <h2>Down Payment (%)</h2>
-              <TextField size="small" label="Description" value={this.state.dpPER} />
+              <TextField size="small" value={this.state.dpPER} />
             </div> 
 
             <div className="mortgage-calculator-section">
               <h2>Interest Rate</h2>
-              <TextField size="small" label="Description" value={this.state.interestRate} />
+              <TextField size="small" value={this.state.interestRate} />
             </div> 
 
             <div className="mortgage-calculator-section">
               <h2>Loan Term</h2>
-              <TextField size="small" label="Description" value={this.state.loanTerm} />
+              <TextField size="small" value={this.state.loanTerm} />
             </div> 
 
             <div className="mortgage-calculator-section">
               <h2>Tax</h2>
-              <TextField size="small" label="Tax" value={this.state.tax} />
+              <TextField size="small" value={this.state.tax} />
             </div> 
             
             <div className="mortgage-calculator-section">
               <h2>Insurance</h2>
-              <TextField size="small" label="Insurance" value={this.state.insurance} />
+              <TextField size="small" value={this.state.insurance} />
             </div> 
 
             <div className="mortgage-calculator-section">
               <h4> => Monthly Payment: $</h4> 
-              <TextField size="small" label="Description" value={this.state.monthlyPayment} />
+              <TextField size="small" style={{backgroundColor: "white"}}  value={this.state.monthlyPayment} />
             </div> 
           </div>
 

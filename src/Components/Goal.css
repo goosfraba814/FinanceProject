@@ -1,7 +1,7 @@
 
 .goal {
-    width: 50%;
     height: 100%;
+    width: auto;
 
     background-color: aquamarine;
     border-style: solid;
@@ -29,10 +29,11 @@
     flex-direction: column;
 
     border-style: solid;
-    border-color: white;
+    border-color: grey;
     background-color: chocolate;
    
     overflow: auto;
+    width: auto;
 
 
     margin: 0;

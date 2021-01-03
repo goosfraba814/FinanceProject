@@ -29,14 +29,14 @@ function prepareTest() {
     type: "Income",
     category: "Paycheck",
     description: "Bi-weekly paycheck #1",
-    amount: 2000,
+    amount: 1500,
   };
   var temp2 = { 
     id: 1,
     type: "Income",
     category: "Paycheck",
     description: "Bi-weekly paycheck #2",
-    amount: 2000,
+    amount: 1500,
   };
   var temp3 = { 
     id: 1,
@@ -73,9 +73,21 @@ function prepareTest() {
     description: "Bought a fry, drink, burger",
     amount: 200,
   };
-
-
-  var tempList = [temp, temp2, temp3, temp4, temp5, temp6, temp7];
+  var temp8 = { 
+    id: 1,
+    type: "Expense",
+    category: "Saving",
+    description: "went into my saving",
+    amount: 200,
+  };
+  var temp9 = { 
+    id: 1,
+    type: "Expense",
+    category: "Others",
+    description: "went into my saving",
+    amount: 400,
+  };
+  var tempList = [temp, temp2, temp3, temp4, temp5, temp6, temp7, temp8, temp9];
   return tempList;
 
 }
@@ -103,7 +115,20 @@ function App() {
   // for switching to budget and morgage
   const [display, setDisplay] = useState("Budget");
 
+  const divStyle = {
+            width: (display === "Budget") ? "50%" : "0%",
+            color: "green",
+
+  };
+  const divStyle2 = {
+            width: (display === "Mortgage") ? "50%" : "0%",
+            height: (display === "Mortgage") ? "100%" : "0%",
+            color: "yellow",
+  };
+
+
   // get testData to show (Future: Update from data from Firebase)
+  //const testdata = (display === "Budget") ? this.getBudgetData() : this.getMortgageData();
   const test = prepareTest();
 
   return (
@@ -115,19 +140,28 @@ function App() {
         <button style={{width: "600px"}} onClick={() => setDisplay("Mortgage")}>Mortgage</button>
       </div>
 
-      <div className="App-parts">
 
-        {/*  */}
+      <div className="App-parts">
+        {/*  
         {(display === "Budget") ? 
           <Goal style={{ display: "flex", width: "50%"}} userID={userID} data={test} />      
           :
           <Mortgage style={{ display: "flex", width: "50%"}} userID={userID} data={test} />      
         }
+        */}
+        <div style={divStyle}>      
+          <Goal userID={userID} data={test} />  
+        </div>
+
+        <div style={divStyle2}>      
+          <Mortgage userID={userID} data={test} />      
+        </div>
 
         {/*  */}
         <Analysis style={{ width: "50%"}} value={display} data={test} display={display} />
 
       </div>
+    
     </div>
   );
 }
